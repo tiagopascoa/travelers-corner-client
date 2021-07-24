@@ -32,9 +32,20 @@ export const newTravelPost = (post) => {
   return axios.post(`${baseURL}/new-travel-post`, post, { withCredentials: true });
 }
 
+export const newLike = (post) => {
+  return axios.put(`${baseURL}/travel-posts/${post.id}`, post, { withCredentials: true });
+}
 
-/* User Area */
+export const getLikes = () => {
+  return axios.get(`${baseURL}/likes`, { withCredentials: true });
+}
+
+/* User */
 
 export const userArea = () => {
   return axios.get(`${baseURL}/user-area`, { withCredentials: true });
+}
+
+export const getUserProfile = (userId) => {
+  return axios.get(`${baseURL}/user-profile/${userId}`);
 }

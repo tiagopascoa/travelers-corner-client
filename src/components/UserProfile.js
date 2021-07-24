@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from "react";
-import { Container, Col, Card, Row } from "react-bootstrap";
-/* import { NavLink } from "react-router-dom"; */
+import React from "react";
+import { getUserProfile } from "../api";
 
-export const UserProfile = ({ user }) => {
-  
+class UserProfile extends React.Component {
+  state = {
+    id: "",
+    username: "",
+    email: "",
+    imageUrl: "",
+  };
 
- return user ? (
-<Container fluid>
-    <Row className="user-row1">
-        <Col md={4}>
-        <h1>Hello {user.username}</h1>
-        <div>
-            <img className="img-user-profile" src={user.imageUrl} alt="" />
-        </div>
-        </Col>
-        <Col md={4}>
-        <h1>Hello {user.username}</h1>
-        <div>
-            <img className="img-user-profile" src={user.imageUrl} alt="" />
-        </div>
-        </Col>
-    </Row>
-    <Row className="user-row2">
-        <Col md={8}>
-            <div>Following</div>
-            <div>Posts</div>
-        </Col>
-    </Row>
-</Container>
+  async componentDidMount() {
+    const response = await getUserProfile(this.props.match.params.id);
+    console.log(response);
+    this.setState({
+      id: response.data._id,
+      username: response.data.username,
+      email: response.data.email,
+      imageUrl: response.data.imageUrl,
+    });
+  }
 
- ) : (<></>) 
-};
+  render() {
+    const { username, email} = this.state;
+    return (
+      <>
+        <h2>{username}</h2>
+        <p>{email}</p>
+      </>
+    );
+  }
+}
+export default UserProfile;

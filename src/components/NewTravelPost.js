@@ -95,16 +95,3 @@ export const NewTravelPost = ({ history, user }) => {
   );
 };
 
-/*       <h1>New Travel Post</h1>
-      <form onSubmit={handleSubmitForm} encType="multipart/form-data">
-        <label>title</label>
-        <input type="text" name="title" ref={titleRef} />
-        <label>location</label>
-        <input type="text" name="location" ref={locationRef} />
-        <label>description</label>
-        <input type="text" name="description" ref={descriptionRef} />
-        <label>Image</label>
-          <input type="file" name="image" onChange={(e) => {setImage(e.target.files[0])}} />
-        <button type="submit">Create</button>
-      </form>
-    </>  */

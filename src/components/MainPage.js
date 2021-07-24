@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getAllTravelPosts } from "../api";
 import { Container, Col, Card, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import LikeButton from "./LikeButton";
 
 export const MainPage = ({ user }) => {
   const [travelPosts, setTravelPost] = useState([]);
@@ -13,10 +14,10 @@ export const MainPage = ({ user }) => {
       setTravelPost(response.data);
     }
     fetchTravelPosts();
-  }, []); //<- dependency array
+  }, [ ]); //<- dependency array
 
   function handleIncrementCounter(){
-
+    
   }
 
   return user ? (
@@ -63,7 +64,10 @@ export const MainPage = ({ user }) => {
                   <div className="main-card-user-info">
                     <img src={travelPost.user.imageUrl} alt="" />
                     <div>
+                      <NavLink to={`/user-profile/${travelPost.user._id}`}>
                       <p>{travelPost.user.username}</p>
+                      </NavLink>
+                      
                       <div className="main-card-date">
                         {travelPost.createdAt.slice(0, 10)}
                       </div>
@@ -98,7 +102,7 @@ export const MainPage = ({ user }) => {
                     </div>
                   </Card.Text>
                   <div className="like-comment-container">
-                    <div><button className="like-btn" onClick={handleIncrementCounter}><i className="far fa-thumbs-up me-1"></i>Like</button></div>
+                    <div><LikeButton /></div>
                     <div><i className="far fa-comments me-1"></i>Comment</div>
                   </div>
                 </Card.Body>

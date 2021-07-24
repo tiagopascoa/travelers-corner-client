@@ -7,7 +7,8 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import { MainPage } from './components/MainPage';
 import { NewTravelPost } from './components/NewTravelPost';
-import { UserProfile } from './components/UserProfile';
+import { UserArea } from './components/UserArea';
+import UserProfile from './components/UserProfile';
 import { loggedIn } from "./api";
 import { ToastContainer } from 'react-toastify';
 
@@ -51,7 +52,8 @@ class App extends React.Component {
           <Route exact path="/new-travel-post" render={(props)=> <NewTravelPost {...props} user={this.state.loggedInUser}/>}  />
           <Route exact path="/login" render={(props) => <Login {...props} setLoggedInUser={this.setLoggedInUser} />} />
           <Route exact path="/main" render={(props)=> <MainPage {...props} user={this.state.loggedInUser}/>} />
-          <Route exact path="/user-area" render={(props)=> <UserProfile {...props} user={this.state.loggedInUser}/>} />
+          <Route exact path="/user-area" render={(props)=> <UserArea {...props} user={this.state.loggedInUser}/>} />
+          <Route exact path="/user-profile/:userId" component={UserProfile} />
         </Switch>
         
       </>
