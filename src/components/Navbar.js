@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Navbar,
-  Container,
-  Nav,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import { logout } from "../api";
 /* import { NavLink } from "react-router-dom"; */
 

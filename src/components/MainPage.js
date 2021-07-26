@@ -16,10 +16,6 @@ export const MainPage = ({ user }) => {
     fetchTravelPosts();
   }, [ ]); //<- dependency array
 
-  function handleIncrementCounter(){
-    
-  }
-
   return user ? (
     <Container fluid className="background-main">
       <Row>
@@ -61,8 +57,10 @@ export const MainPage = ({ user }) => {
             <Col md={5} className="mx-auto flex-col-reverse">
               <Card key={travelPost._id} className="main-cards ">
                 <Card.Header className="main-card-header">
+
                   <div className="main-card-user-info">
                     <img src={travelPost.user.imageUrl} alt="" />
+
                     <div>
                       <NavLink to={`/user-profile/${travelPost.user._id}`}>
                       <p>{travelPost.user.username}</p>
@@ -72,12 +70,13 @@ export const MainPage = ({ user }) => {
                         {travelPost.createdAt.slice(0, 10)}
                       </div>
                     </div>
+
+                    <NavLink  className="ms-auto" to={`/travel-posts/${travelPost._id}`}><img src="/images/plus-sign-blue.svg" alt="" style={{width: "1.5rem"}}/></NavLink>
                   </div>
-                  <div>
+
+
+                  <div className="mt-2 mb-2">
                     <i class="fas fa-map-marker-alt"></i> {travelPost.location}
-                  </div>
-                  <div className="main-card-description">
-                    {travelPost.description}
                   </div>
                 </Card.Header>
                 <Card.Img
@@ -92,18 +91,14 @@ export const MainPage = ({ user }) => {
                         return `#${tag} `;
                       })}
                     </div>
-                    <div className="like-and-counter">
-                      <img
-                        className="like-blue-img me-1"
-                        src="/images/like-blue.svg"
-                        alt=""
-                      />
-                      {travelPost.likeCount}
+                    <div className="like-and-counter mt-2 mb-2">
+                      <LikeButton travelPostId={travelPost._id}/>
                     </div>
                   </Card.Text>
                   <div className="like-comment-container">
-                    <div><LikeButton /></div>
-                    <div><i className="far fa-comments me-1"></i>Comment</div>
+                      <NavLink to={`/travel-posts/${travelPost._id}`}>
+                      <div><i className="far fa-comments me-1"></i>Comment</div>
+                      </NavLink>           
                   </div>
                 </Card.Body>
               </Card>

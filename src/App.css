@@ -138,7 +138,9 @@ body{
  align-items: center;
 }
 
-
+.plus-sign{
+  width: 1.5rem;
+}
 .text-simulation-img-container img{
   border-radius: 50%;
   width: 2.5rem ;
@@ -172,7 +174,7 @@ a.text-simulation-link:hover {
   margin-left: 0.5rem;
 }
 .main-card-user-info{
-  display: inline-flex;
+  display: flex;
   align-items: center;
 }
 
@@ -215,7 +217,7 @@ a.text-simulation-link:hover {
 }
 
 .img-user-profile{
-  width: 11.5rem;
+  width: 10rem;
   height: 10rem;
   border-radius: 50%;
 }
@@ -233,22 +235,25 @@ a.text-simulation-link:hover {
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   /* border-top-left-radius: 1.25rem; */
 }
 
-.user-area-col1{
-  border-top-left-radius: 1.25rem;
+.user-area-col1, .user-area-col2, .user-area-col3, .user-area-col-map{
+  /* border-radius: 1.25rem; */
+  /* border-top-right-radius: 1.25rem; */
 }
 
-.user-area-col2{
+/* .user-area-col2{
   border-top-right-radius: 1.25rem;
+  border-top-left-radius: 1.25rem;
 }
 
 .user-area-col3{
   border-bottom-left-radius: 1.25rem;
   border-bottom-right-radius: 1.25rem;
-}
+  border-top: 1px solid rgba(0,0,0,.125)
+} */
 
 .user-following-posts{
   display: flex;
@@ -276,4 +281,50 @@ a.text-simulation-link:hover {
 .my-btn-delete a:hover {
   color: white;
   text-decoration: none;
+}
+
+
+/* TravelPostPage */
+
+.destination-img{
+  width: 100%;
+  border-radius: 5%;
+}
+
+.travelPost-page-row1 {
+  justify-content: center;
+}
+
+.travelPost-page-col1, .travelPost-page-col2, .travelPost-page-col3{
+  background-color: white;
+}
+
+.travelPost-page-col2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.postPage-user-image{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin: 0 2rem;
+}
+
+.post-page-comments{
+  display: flex;
+  justify-content: center;
+}
+
+.travelPost-page-col3{
+  border-top: 1px solid rgba(0,0,0,.125);
+}
+
+
+/* Comments */
+
+.comments-form-container{
+  display: flex;
+  align-items: center;
 }

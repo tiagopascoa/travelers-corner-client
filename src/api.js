@@ -32,12 +32,20 @@ export const newTravelPost = (post) => {
   return axios.post(`${baseURL}/new-travel-post`, post, { withCredentials: true });
 }
 
-export const newLike = (post) => {
-  return axios.put(`${baseURL}/travel-posts/${post.id}`, post, { withCredentials: true });
+export const getTravelPost = (travelPostId) => {
+  return axios.get(`${baseURL}/travel-posts/${travelPostId}`)
 }
 
-export const getLikes = () => {
-  return axios.get(`${baseURL}/likes`, { withCredentials: true });
+export const newLike = (travelPostId) => {
+  return axios.post(`${baseURL}/travel-post/${travelPostId}/like`, travelPostId, { withCredentials: true });
+}
+
+export const getLikes = (travelPostId) => {
+  return axios.get(`${baseURL}/travel-post/${travelPostId}/like`, { withCredentials: true });
+}
+
+export const newComment = (travelPostId) => {
+  return axios.post(`${baseURL}/travel-posts/${travelPostId}/comments`);
 }
 
 /* User */

@@ -9,6 +9,7 @@ import { MainPage } from './components/MainPage';
 import { NewTravelPost } from './components/NewTravelPost';
 import { UserArea } from './components/UserArea';
 import UserProfile from './components/UserProfile';
+import TravelPostPage from './components/TravelPostPage';
 import { loggedIn } from "./api";
 import { ToastContainer } from 'react-toastify';
 
@@ -54,6 +55,7 @@ class App extends React.Component {
           <Route exact path="/main" render={(props)=> <MainPage {...props} user={this.state.loggedInUser}/>} />
           <Route exact path="/user-area" render={(props)=> <UserArea {...props} user={this.state.loggedInUser}/>} />
           <Route exact path="/user-profile/:userId" component={UserProfile} />
+          <Route exact path="/travel-posts/:id" component={TravelPostPage} />
         </Switch>
         
       </>
