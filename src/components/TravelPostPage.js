@@ -2,7 +2,7 @@ import React from "react";
 import { getTravelPost } from "../api";
 import { Container, Col, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import { NewComment } from "./NewComment";
+import NewComment from "./NewComment";
 
 class TravelPostPage extends React.Component {
   state = {
@@ -12,7 +12,7 @@ class TravelPostPage extends React.Component {
     user: {},
     imageUrl: "",
     createdAt: "",
-    comments: []
+    comments: [],
   };
 
   async componentDidMount() {
@@ -29,6 +29,11 @@ class TravelPostPage extends React.Component {
   }
 
   
+  addComment = (newComment) => {
+    this.setState({
+      comments: this.state.comments.concat(newComment)
+    });
+  }
 
   render() {
     const { location, description, tags, user, imageUrl, createdAt, comments } =
@@ -61,9 +66,11 @@ class TravelPostPage extends React.Component {
 
             <div className="">
               <h6>Created by:</h6>
-              <NavLink to={`/user-profile/${user._id}`}>
-                <p>{user.username}</p>
-              </NavLink>
+              <p>
+                <NavLink to={`/user-profile/${user._id}`}>
+                  {user.username}
+                </NavLink>
+              </p>
             </div>
             <div className="mb-4">
               {" "}
@@ -73,20 +80,23 @@ class TravelPostPage extends React.Component {
           </Col>
         </Row>
         <Row>
-        <Col md={8} className="mx-auto travelPost-page-col3">
+          <Col md={8} className="mx-auto travelPost-page-col3">
             <div className="post-page-comments mt-3 mb-3">
-                <h5>
+              <h5>
                 <i className="far fa-comments me-1"></i>Comments
-                </h5>
+              </h5>
             </div>
-            <NewComment />
-            <p>
-              {comments.map((comment) => {
-                return <ul>
-                    <li>{comment}</li>
-                </ul>
-              })}
-            </p>
+            <NewComment
+              user={this.props.user}
+              postId={this.props.match.params.id}
+              addComment={this.addComment}
+            />
+
+         {comments.map((comment) => {
+              return <h5> Comment: {comment.comment} User: <NavLink to={`/user-profile/${user._id}`}>
+               {comment.user}
+                </NavLink>  </h5>;
+            })} 
           </Col>
         </Row>
       </Container>

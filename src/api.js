@@ -44,8 +44,8 @@ export const getLikes = (travelPostId) => {
   return axios.get(`${baseURL}/travel-post/${travelPostId}/like`, { withCredentials: true });
 }
 
-export const newComment = (travelPostId) => {
-  return axios.post(`${baseURL}/travel-posts/${travelPostId}/comments`);
+export const newComment = (travelPostId, comment) => {
+  return axios.put(`${baseURL}/travel-posts/${travelPostId}/comments`, comment, { withCredentials: true });
 }
 
 /* User */
@@ -56,4 +56,8 @@ export const userArea = () => {
 
 export const getUserProfile = (userId) => {
   return axios.get(`${baseURL}/user-profile/${userId}`);
+}
+
+export const newFollower = (userId) => {
+  return axios.post(`${baseURL}/user-profile/${userId}/follower`)
 }

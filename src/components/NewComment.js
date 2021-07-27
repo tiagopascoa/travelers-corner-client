@@ -1,39 +1,82 @@
-import React, { useRef } from "react";
-import { newComment } from "../api";
+import React from "react";
+import { getTravelPost, newComment } from "../api";
 import { Container, Col, Form, Button, Row } from "react-bootstrap";
+import '../App.css';
 
-export const NewComment = ({ history }) => {
-  
-  const commentsRef = useRef();
-
-  const handleSubmitForm = async (e) => {
-    e.preventDefault();
-
-    const newCommentUpdate = {
-      comments: commentsRef.current.value,
-    };
-    await newComment(newCommentUpdate);
-    history.push("/main");
+class NewComment extends React.Component {
+  state = {
+    travelpost_id:'',
+    comment: "",
+    user: "",
   };
 
-  return (
-    <Container fluid>
-      <Row>
-        <Col md={8}>
-          <div>
-            <Form onSubmit={handleSubmitForm}>
-              <Form.Group className="mb-3" controlId="formBasicLocation">
-                <Form.Control
-                  type="text"
-                  name="comments"
-                  ref={commentsRef}
-                />
-              </Form.Group>   
-              <Button >New comment!</Button>
-            </Form>
-          </div>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
+  async componentDidMount (){
+    const travelID = this.props.postId;
+    const response = await getTravelPost(travelID);
+
+    this.setState({
+      travelpost_id: response.data._id,
+      user: this.props.user,
+    })
+    console.log("id:", this.state.travelpost_id)
+    console.log("user:", this.state.user)
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  handleFormSubmit = async (event) => {
+    event.preventDefault();
+    
+    console.log("adding a comment")
+
+    const { user, comment, travelpost_id} = this.state;
+
+    const newCommentUpdate = {
+      comment,
+      user: user.username
+    };
+
+    console.log(newCommentUpdate)
+
+    await newComment(travelpost_id, newCommentUpdate);
+    this.props.addComment(newCommentUpdate);
+
+    /* this.props.history.push('/main');  */
+  }
+
+/*   hadleOnClick = () => {
+    this.setState({comment: ""});
+  } */
+
+
+  render() {
+    const { comment } = this.state;
+    return (
+      <Container fluid>
+        <Row className="comments-col">
+          <Col md={8} >
+              <Form onSubmit={this.handleFormSubmit} >
+                <Form.Group className="mb-3 mx-auto" controlId="formBasicLocation">
+                  <Form.Control
+                    type="text"
+                    name="comment"
+                    onChange={this.handleChange}
+                    value={comment}
+                  />
+                </Form.Group>   
+                <Button onClick={this.hadleOnClick} type="submit">New comment!</Button>
+              </Form>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}
+
+  
+export default NewComment
+  

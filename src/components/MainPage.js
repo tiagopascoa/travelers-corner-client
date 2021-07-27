@@ -76,7 +76,7 @@ export const MainPage = ({ user }) => {
 
 
                   <div className="mt-2 mb-2">
-                    <i class="fas fa-map-marker-alt"></i> {travelPost.location}
+                    <i className="fas fa-map-marker-alt"></i> {travelPost.location}
                   </div>
                 </Card.Header>
                 <Card.Img

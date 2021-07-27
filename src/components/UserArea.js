@@ -42,7 +42,7 @@ export const UserArea = ({ user }) => {
       </Row>
       <Row className="user-row3 ms-2 me-2">
         <Col md={8} className="user-area-cols2 user-area-col3">
-          <div className="user-following-posts mt-5 mb-3">
+          <div className="user-following-posts mt-3 mb-3">
             <div>
               <h5>
                 <i class="fas fa-users me-2"></i>Following

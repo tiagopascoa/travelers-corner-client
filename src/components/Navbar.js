@@ -30,11 +30,12 @@ function MyNavbar({ loggedInUser, setLoggedInUser }) {
           </Form> */}
 
           <Nav.Link href="/main">
-            <i class="fas fa-home fa-lg"></i>
+            <i className="fas fa-home fa-lg"></i>
           </Nav.Link>
         </Nav>
          
           <Nav className="ms-auto">
+            <img src={loggedInUser.imageUrl} alt="" className="navbar-user-img"/>
             <Nav.Link href="/user-area">Welcome {loggedInUser.username}</Nav.Link>
             <Nav.Link>
               <button className="logout-btn" onClick={logoutUser}>

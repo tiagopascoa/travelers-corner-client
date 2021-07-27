@@ -4,6 +4,11 @@ body{
 
 /* NAVBAR */
 
+.navbar-user-img{
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
 .my-nav{
   background-color: #6D9CD8 !important;
 }
@@ -248,12 +253,12 @@ a.text-simulation-link:hover {
   border-top-right-radius: 1.25rem;
   border-top-left-radius: 1.25rem;
 }
-
+*/
 .user-area-col3{
-  border-bottom-left-radius: 1.25rem;
-  border-bottom-right-radius: 1.25rem;
+/*   border-bottom-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem; */
   border-top: 1px solid rgba(0,0,0,.125)
-} */
+} 
 
 .user-following-posts{
   display: flex;
@@ -327,4 +332,16 @@ a.text-simulation-link:hover {
 .comments-form-container{
   display: flex;
   align-items: center;
+}
+
+.comments-col{
+  display: flex;
+  justify-content: center;
+}
+
+
+/* User Profile */
+.user-profile-postsCol{
+  border-top: 1px solid rgba(0,0,0,.125);
+  background-color: white;
 }

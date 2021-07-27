@@ -55,7 +55,7 @@ class App extends React.Component {
           <Route exact path="/main" render={(props)=> <MainPage {...props} user={this.state.loggedInUser}/>} />
           <Route exact path="/user-area" render={(props)=> <UserArea {...props} user={this.state.loggedInUser}/>} />
           <Route exact path="/user-profile/:userId" component={UserProfile} />
-          <Route exact path="/travel-posts/:id" component={TravelPostPage} />
+          <Route exact path="/travel-posts/:id" render={(props)=> <TravelPostPage {...props} user={this.state.loggedInUser}/>} />
         </Switch>
         
       </>
