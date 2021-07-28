@@ -7,7 +7,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import { MainPage } from './components/MainPage';
 import { NewTravelPost } from './components/NewTravelPost';
-import { UserArea } from './components/UserArea';
+import UserArea from './components/UserArea';
 import UserProfile from './components/UserProfile';
 import TravelPostPage from './components/TravelPostPage';
 import { loggedIn } from "./api";
@@ -53,8 +53,8 @@ class App extends React.Component {
           <Route exact path="/new-travel-post" render={(props)=> <NewTravelPost {...props} user={this.state.loggedInUser}/>}  />
           <Route exact path="/login" render={(props) => <Login {...props} setLoggedInUser={this.setLoggedInUser} />} />
           <Route exact path="/main" render={(props)=> <MainPage {...props} user={this.state.loggedInUser}/>} />
-          <Route exact path="/user-area" render={(props)=> <UserArea {...props} user={this.state.loggedInUser}/>} />
-          <Route exact path="/user-profile/:userId" component={UserProfile} />
+          <Route exact path="/user-area/:loggedUserId" render={(props)=> <UserArea {...props} loggedUser={this.state.loggedInUser}/>} />
+          <Route exact path="/user-profile/:userId" render={(props)=> <UserProfile {...props} user={this.state.loggedInUser}/>} />
           <Route exact path="/travel-posts/:id" render={(props)=> <TravelPostPage {...props} user={this.state.loggedInUser}/>} />
         </Switch>
         

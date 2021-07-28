@@ -48,19 +48,21 @@ class NewComment extends React.Component {
     /* this.props.history.push('/main');  */
   }
 
+  
+
 /*   hadleOnClick = () => {
     this.setState({comment: ""});
-  } */
-
+  }
+ */
 
   render() {
     const { comment } = this.state;
     return (
       <Container fluid>
-        <Row className="comments-col">
-          <Col md={8} >
-              <Form onSubmit={this.handleFormSubmit} >
-                <Form.Group className="mb-3 mx-auto" controlId="formBasicLocation">
+        <Row className="">
+          <Col md={6}>
+              <Form onSubmit={this.handleFormSubmit} className="mb-3">
+                <Form.Group className="mb-3" controlId="formBasicLocation">
                   <Form.Control
                     type="text"
                     name="comment"
@@ -68,7 +70,7 @@ class NewComment extends React.Component {
                     value={comment}
                   />
                 </Form.Group>   
-                <Button onClick={this.hadleOnClick} type="submit">New comment!</Button>
+                <Button type="submit">New comment!</Button>
               </Form>
           </Col>
         </Row>

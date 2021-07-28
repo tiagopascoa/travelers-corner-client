@@ -48,16 +48,20 @@ export const newComment = (travelPostId, comment) => {
   return axios.put(`${baseURL}/travel-posts/${travelPostId}/comments`, comment, { withCredentials: true });
 }
 
+export const getUserPosts = (userId) => {
+  return axios.get(`${baseURL}/user/${userId}/travel-posts`, { withCredentials: true });
+}
+
 /* User */
 
-export const userArea = () => {
-  return axios.get(`${baseURL}/user-area`, { withCredentials: true });
+export const userArea = (loggedUserId) => {
+  return axios.get(`${baseURL}/user-area/${loggedUserId}`, { withCredentials: true });
 }
 
 export const getUserProfile = (userId) => {
   return axios.get(`${baseURL}/user-profile/${userId}`);
 }
 
-export const newFollower = (userId) => {
-  return axios.post(`${baseURL}/user-profile/${userId}/follower`)
+export const newFollower = (userId, loggedUserId) => {
+  return axios.put(`${baseURL}/user-profile/${userId}/follower/${loggedUserId}`, { withCredentials: true })
 }

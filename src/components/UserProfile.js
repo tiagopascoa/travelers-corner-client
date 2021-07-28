@@ -1,6 +1,8 @@
 import React from "react";
-import { getUserProfile, newFollower } from "../api";
+import { getUserProfile, newFollower, getUserPosts } from "../api";
 import { Container, Col, Button, Row, Form } from "react-bootstrap";
+import { toast } from "react-toastify";
+import { NavLink } from "react-router-dom";
 
 class UserProfile extends React.Component {
   state = {
@@ -8,27 +10,34 @@ class UserProfile extends React.Component {
     username: "",
     email: "",
     imageUrl: "",
+    myPosts: [],
   };
 
   async componentDidMount() {
     const response = await getUserProfile(this.props.match.params.userId);
-    console.log(response);
+    const userPosts = await getUserPosts(this.props.match.params.userId);
+    console.log(userPosts);
+
     this.setState({
       id: response.data._id,
       username: response.data.username,
       email: response.data.email,
       imageUrl: response.data.imageUrl,
+      myPosts: userPosts.data,
     });
+
+    console.log(this.state.myPosts);
   }
 
-   handleFormSubmit = async (event) => {
+  handleFormSubmit = async (event) => {
     event.preventDefault();
-    const response = await getUserProfile(this.props.match.params.userId);
-    await newFollower(response.data._id)
-  } 
+    await newFollower(this.state.id, this.props.user._id);
+    toast.success("following");
+  };
 
   render() {
-    const { username, email, imageUrl } = this.state;
+    const { username, email, imageUrl, myPosts } = this.state;
+    const havePosts = myPosts.length > 0;
     return (
       <Container fluid>
         <Row className="user-row1 mt-3">
@@ -53,21 +62,45 @@ class UserProfile extends React.Component {
             </div>
           </Col>
         </Row>
-        <Row className="user-row3">
-          <Col md={8} className="user-profile-postsCol">
-            <div className="user-following-posts mt-3 mb-3">
-              <div>
-                <h5>
-                  <i className="fas fa-clone me-2"></i>Posts
-                </h5>
+        {havePosts && (
+          <Row className="user-row3">
+            <Col md={8} className="user-profile-postsCol">
+              <div className="user-following-posts mt-3 mb-3">
+                <div>
+                  <h5>
+                    <i className="fas fa-clone me-2"></i>Posts
+                  </h5>
+                </div>
               </div>
-            </div>
-          </Col>
-        </Row>
-
-        <div></div>
+              <div>
+                {myPosts.map((post) => {
+                  return (
+                    <ul className="list-following-posts">
+                      <li key={post._id}>
+                        <img
+                          src={post.imageUrl}
+                          alt=""
+                          style={{
+                            width: "3rem",
+                            height: "3rem",
+                            borderRadius: "50%",
+                          }}
+                          className="me-2"
+                        />
+                        <NavLink to={`/travel-posts/${post._id}`}>
+                          {post.city}
+                        </NavLink>
+                      </li>
+                    </ul>
+                  );
+                })}
+              </div>
+            </Col>
+          </Row>
+        )}
       </Container>
     );
   }
 }
+
 export default UserProfile;

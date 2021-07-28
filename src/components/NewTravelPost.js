@@ -4,7 +4,8 @@ import { Container, Col, Form, Button, Row } from "react-bootstrap";
 
 export const NewTravelPost = ({ history, user }) => {
   
-  const locationRef = useRef();
+  const cityRef = useRef();
+  const countryRef = useRef();
   const descriptionRef = useRef();
   const tagsRef = useRef();
   const [image, setImage] = useState();
@@ -19,7 +20,8 @@ export const NewTravelPost = ({ history, user }) => {
     const tagsArr = tagsRef.current.value.split(",");
 
     const newPost = {
-      location: locationRef.current.value,
+      city: cityRef.current.value,
+      country: countryRef.current.value,
       description: descriptionRef.current.value,
       tags: tagsArr,
       imageUrl: response.data.fileUrl,
@@ -35,13 +37,23 @@ export const NewTravelPost = ({ history, user }) => {
         <Col md={4} className="mx-auto">
           <div className="new-post-container">
             <Form onSubmit={handleSubmitForm} encType="multipart/form-data">
-              <Form.Group className="mb-3" controlId="formBasicLocation">
-                <Form.Label>Location</Form.Label>
+              <Form.Group className="mb-3" controlId="formBasicCity">
+                <Form.Label>City</Form.Label>
                 <Form.Control
                   type="text"
-                  name="location"
-                  placeholder="Lisbon, Portugal . . ."
-                  ref={locationRef}
+                  name="city"
+                  placeholder="Lisbon . . ."
+                  ref={cityRef}
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicCountry">
+                <Form.Label>Country</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="country"
+                  placeholder="Portugal . . ."
+                  ref={countryRef}
                 />
               </Form.Group>
 
@@ -50,7 +62,7 @@ export const NewTravelPost = ({ history, user }) => {
                 <Form.Control
                   type="text"
                   name="tags"
-                  placeholder="lisbon,summer,friends (separeted by commas)"
+                  placeholder="lisbon,summer (separeted by commas / no space)"
                   ref={tagsRef}
                 />
               </Form.Group>
@@ -60,6 +72,7 @@ export const NewTravelPost = ({ history, user }) => {
                 <Form.Control
                   type="text"
                   name="description"
+                  placeholder="Amazing times with my friends in Lisbon! . . ."
                   ref={descriptionRef}
                   as="textarea"
                   rows={2}

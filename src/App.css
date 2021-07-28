@@ -221,6 +221,9 @@ a.text-simulation-link:hover {
   all: unset;
 }
 
+
+/* User Area */
+
 .img-user-profile{
   width: 10rem;
   height: 10rem;
@@ -232,7 +235,7 @@ a.text-simulation-link:hover {
   justify-content: space-evenly;
 }
 
-.user-row1, .user-row2, .user-row3{
+.user-row1, .user-row2, .user-row3, .user-row4, .user-row5, .user-row6{
   justify-content: center;
 }
 
@@ -244,6 +247,9 @@ a.text-simulation-link:hover {
   /* border-top-left-radius: 1.25rem; */
 }
 
+.user-area-col-lists{
+  background-color: white;
+}
 .user-area-col1, .user-area-col2, .user-area-col3, .user-area-col-map{
   /* border-radius: 1.25rem; */
   /* border-top-right-radius: 1.25rem; */
@@ -288,6 +294,10 @@ a.text-simulation-link:hover {
   text-decoration: none;
 }
 
+.list-following-posts {
+  list-style: none;
+}
+
 
 /* TravelPostPage */
 
@@ -329,14 +339,25 @@ a.text-simulation-link:hover {
 
 /* Comments */
 
-.comments-form-container{
+.comments-container{
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  /* align-items: center; */
+  /* margin-left: 1.5rem; */
+  width: 25rem;
+  background-color: #EBEDF0;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
 }
 
-.comments-col{
+.comments-super-conatiner{
   display: flex;
   justify-content: center;
+}
+
+.comment-p{
+  margin-bottom: 0;
 }
 
 
