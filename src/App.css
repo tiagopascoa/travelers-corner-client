@@ -100,6 +100,30 @@ body{
   border-color: #6D9CD8 !important;
 }
 
+.signup-conatiner{
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+
+/* LOGIN */
+
+.login-container{
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+
+/* NEW POST */
+
+.new-post-container{
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
 
 /* MAIN PAGE */
 
@@ -227,7 +251,8 @@ a.text-simulation-link:hover {
 .img-user-profile{
   width: 10rem;
   height: 10rem;
-  border-radius: 50%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .edit-profile-btns{
@@ -310,7 +335,7 @@ a.text-simulation-link:hover {
   justify-content: center;
 }
 
-.travelPost-page-col1, .travelPost-page-col2, .travelPost-page-col3{
+.travelPost-page-col1, .travelPost-page-col2, .travelPost-page-col3, .travelPost-page-col4{
   background-color: white;
 }
 
@@ -332,9 +357,9 @@ a.text-simulation-link:hover {
   justify-content: center;
 }
 
-.travelPost-page-col3{
-  border-top: 1px solid rgba(0,0,0,.125);
-}
+  /* .travelPost-page-col3{
+    border-top: 1px solid rgba(0,0,0,.125);
+  } */
 
 
 /* Comments */

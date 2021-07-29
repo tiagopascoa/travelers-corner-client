@@ -31,6 +31,7 @@ class Login extends React.Component {
         <Container fluid>
             <Row>
               <Col md={4} className="mx-auto">
+                <div className="my-2 login-container">
                 <h2 className="d-flex justify-content-center my-2">Login</h2>
                 <Form onSubmit={this.handleFormSubmit}>
 
@@ -46,6 +47,8 @@ class Login extends React.Component {
 
                   <Button type="submit">Login</Button>
                 </Form>
+                </div>
+                
               </Col>
             </Row>
         </Container>

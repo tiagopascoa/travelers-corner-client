@@ -42,7 +42,7 @@ class UserProfile extends React.Component {
       <Container fluid>
         <Row className="user-row1 mt-3">
           <Col md={4} className="user-area-cols user-area-col1">
-            <h3 className="mx-auto mt-3">{username}</h3>
+            <h3 className="mx-auto mt-3">User: {username}</h3>
             <div className="mx-auto mb-5">
               <img
                 className="img-user-profile mt-3"

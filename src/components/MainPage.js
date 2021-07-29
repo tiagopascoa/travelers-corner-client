@@ -16,6 +16,7 @@ export const MainPage = ({ user }) => {
     fetchTravelPosts();
   }, []); //<- dependency array
 
+
   return user ? (
     <Container fluid className="background-main">
       <Row>
@@ -82,7 +83,7 @@ export const MainPage = ({ user }) => {
                   </div>
                   <div className="mt-2 mb-2">
                     <i className="fas fa-map-marker-alt me-2"></i>
-                    {travelPost.city}
+                    {travelPost.city}, {travelPost.country}
                   </div>
                 </Card.Header>
                 <Card.Img

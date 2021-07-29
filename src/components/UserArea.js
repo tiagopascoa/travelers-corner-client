@@ -31,12 +31,14 @@ class UserArea extends React.Component {
   render() {
     const { loggedUser } = this.props;
     const { username, email, imageUrl, myPosts, following } = this.state;
+    
+    
     return loggedUser ? (
       <Container fluid>
         <Row className="user-row1 mt-3 ms-2 me-2">
           <Col md={4} className="user-area-cols user-area-col1">
             <h3 className="mx-auto mt-3">Hello {username}!</h3>
-            <div className="mx-auto">
+            <div className="mx-auto mb-3">
               <img
                 className="img-user-profile mt-3"
                 src={imageUrl}

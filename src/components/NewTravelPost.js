@@ -35,7 +35,7 @@ export const NewTravelPost = ({ history, user }) => {
     <Container fluid>
       <Row>
         <Col md={4} className="mx-auto">
-          <div className="new-post-container">
+          <div className="new-post-container my-3">
             <Form onSubmit={handleSubmitForm} encType="multipart/form-data">
               <Form.Group className="mb-3" controlId="formBasicCity">
                 <Form.Label>City</Form.Label>
