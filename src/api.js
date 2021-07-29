@@ -58,6 +58,10 @@ export const userArea = (loggedUserId) => {
   return axios.get(`${baseURL}/user-area/${loggedUserId}`, { withCredentials: true });
 }
 
+export const map = (loggedUserId) => {
+  return axios.get(`${baseURL}/user-area/${loggedUserId}/map`, { withCredentials: true });
+}
+
 export const getUserProfile = (userId) => {
   return axios.get(`${baseURL}/user-profile/${userId}`);
 }

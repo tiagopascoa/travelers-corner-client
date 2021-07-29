@@ -10,6 +10,7 @@ import { NewTravelPost } from './components/NewTravelPost';
 import UserArea from './components/UserArea';
 import UserProfile from './components/UserProfile';
 import TravelPostPage from './components/TravelPostPage';
+import PinMap from './components/PinMap';
 import { loggedIn } from "./api";
 import { ToastContainer } from 'react-toastify';
 
@@ -54,6 +55,7 @@ class App extends React.Component {
           <Route exact path="/login" render={(props) => <Login {...props} setLoggedInUser={this.setLoggedInUser} />} />
           <Route exact path="/main" render={(props)=> <MainPage {...props} user={this.state.loggedInUser}/>} />
           <Route exact path="/user-area/:loggedUserId" render={(props)=> <UserArea {...props} loggedUser={this.state.loggedInUser}/>} />
+          <Route exact path="/user-area/:loggedUserId/map" component={PinMap} />
           <Route exact path="/user-profile/:userId" render={(props)=> <UserProfile {...props} user={this.state.loggedInUser}/>} />
           <Route exact path="/travel-posts/:id" render={(props)=> <TravelPostPage {...props} user={this.state.loggedInUser}/>} />
         </Switch>

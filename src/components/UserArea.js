@@ -30,7 +30,7 @@ class UserArea extends React.Component {
 
   render() {
     const { loggedUser } = this.props;
-    const { username, email, imageUrl, myPosts, following } = this.state;
+    const { username, email, imageUrl, myPosts, following, id } = this.state;
     
     
     return loggedUser ? (
@@ -65,7 +65,7 @@ class UserArea extends React.Component {
             <div className="user-following-posts mt-5 mb-5">
               <div>
                 <i className="fas fa-map-marked-alt navbar-brand"></i>
-                <NavLink to="#">Create Your Travels Pin Map!</NavLink>
+                <NavLink to={`/user-area/${id}/map`}>Create Your Travels Pin Map!</NavLink>
               </div>
             </div>
           </Col>

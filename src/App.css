@@ -5,7 +5,7 @@ body{
 /* NAVBAR */
 
 .navbar-user-img{
-  width: 2.5rem;
+  width: 2.5rem;;
   border-radius: 50%;
 }
 
@@ -20,6 +20,10 @@ body{
 
 .nav-link{
   color: white !important;
+}
+
+.logo{
+  width: 2rem;
 }
 
 
@@ -391,3 +395,90 @@ a.text-simulation-link:hover {
   border-top: 1px solid rgba(0,0,0,.125);
   background-color: white;
 }
+
+/* Toasts */
+.Toastify__toast--success{
+  background: #6D9CD8 !important;
+  border-radius: 1rem !important;
+  opacity: 0.9 !important;
+  color: white !important;
+}
+
+.Toastify__toast--error{
+  background: #cf5f5f !important;
+  border-radius: 1rem !important;
+  opacity: 0.9 !important;
+  color: white !important;
+}
+
+/* MAP */
+
+.marker {
+  width:0px;
+  height:0px;
+}
+
+.marker  span {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-sizing:border-box;
+  width: 15px;
+  height: 15px;
+  color:#fff;
+  background: #6D9CD8;
+  border:solid 2px;
+  border-radius: 0 70% 70%;
+  box-shadow:0 0 2px #000;
+  cursor: pointer;
+    transform-origin:0 0;
+    transform: rotateZ(-135deg);
+}
+
+.marker b {
+  transform: rotateZ(135deg)
+}
+
+/* .temporary-marker span {
+  background: red;
+} */
+
+.react-geocoder-results{
+  color: #6D9CD8;
+  cursor: pointer;
+}
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+@media print {
+  .print-source {
+    display: none;
+  }
+  .my-pin-map {
+    margin: 3rem;
+  }
+}
+
+.my-pin-map{
+  text-align: center;
+}
+
+.omapa{
+  display: flex;
+  justify-content: center;
+}
+
+.geocoder-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-to-print{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

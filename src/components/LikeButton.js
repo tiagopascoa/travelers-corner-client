@@ -24,9 +24,7 @@ class LikeButton extends React.Component{
         })
         document.querySelector("#like-thumbs").style.color = "blue";
         document.querySelector("#like-thumbs").style.fontWeight = 900;
-        document.querySelector("#like-text-change").innerHTML = "You like this post! ";
-        
-         
+        document.querySelector("#like-text-change").innerHTML = "You like this post! ";      
     }
 
 

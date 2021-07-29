@@ -32,7 +32,7 @@ class UserProfile extends React.Component {
   handleFormSubmit = async (event) => {
     event.preventDefault();
     await newFollower(this.state.id, this.props.user._id);
-    toast.success("following");
+    toast.success("Added to your following list!");
   };
 
   render() {
