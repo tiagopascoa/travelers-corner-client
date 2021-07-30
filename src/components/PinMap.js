@@ -4,6 +4,7 @@ import Geocoder from "react-mapbox-gl-geocoder";
 import { Container, Col, Row, Button } from "react-bootstrap";
 import ReactToPrint from "react-to-print";
 import { toast } from "react-toastify";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const mapStyle = {
   width: "90%",
