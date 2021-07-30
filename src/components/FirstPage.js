@@ -41,7 +41,7 @@ function FirstPage() {
               <div className="features-img-container">
                 <img src="/images/pin-map.svg" alt="" />
               </div>
-              <h6>Create your own Travels Pin Map</h6>
+              <h6>Create your own Travel Pin Map</h6>
             </div>
             <div className="firstPage-features-div3">
               <div className="features-img-container">

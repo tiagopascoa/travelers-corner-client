@@ -40,9 +40,9 @@ class UserProfile extends React.Component {
     const havePosts = myPosts.length > 0;
     return (
       <Container fluid>
-        <Row className="user-row1 mt-3">
-          <Col md={4} className="user-area-cols user-area-col1">
-            <h3 className="mx-auto mt-3">User: {username}</h3>
+        <Row className="user-row1 mt-3 ms-2 me-2">
+          <Col md={3} className="user-area-cols user-profile-col1">
+            <h4 className="mx-auto mt-3">{username}</h4>
             <div className="mx-auto mb-5">
               <img
                 className="img-user-profile mt-3"
@@ -51,10 +51,10 @@ class UserProfile extends React.Component {
               />
             </div>
           </Col>
-          <Col md={4} className="user-area-cols user-area-col2">
-            <h3 className="mx-auto mt-3">Contact information</h3>
-            <h5 className="mt-3">Username: {username}</h5>
-            <h5>Email: {email}</h5>
+          <Col md={3} className="user-area-cols user-profile-col2">
+            <h4 className="mx-auto mt-3">Contact information</h4>
+            <h6 className="mt-3">Username: {username}</h6>
+            <h6>Email: {email}</h6>
             <div className="mx-auto mb-3">
               <Form onSubmit={this.handleFormSubmit}>
                 <Button type="submit"> Follow </Button>
@@ -63,13 +63,13 @@ class UserProfile extends React.Component {
           </Col>
         </Row>
         {havePosts && (
-          <Row className="user-row3">
-            <Col md={8} className="user-profile-postsCol">
-              <div className="user-following-posts mt-3 mb-3">
+          <Row className="user-row3 ms-2 me-2 mb-3">
+            <Col md={6} className="user-profile-col3">
+              <div className="user-following-posts mt-3 mb-2">
                 <div>
-                  <h5>
+                  <h6>
                     <i className="fas fa-clone me-2"></i>Posts
-                  </h5>
+                  </h6>
                 </div>
               </div>
               <div>

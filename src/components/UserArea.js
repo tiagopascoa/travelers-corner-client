@@ -36,8 +36,8 @@ class UserArea extends React.Component {
     return loggedUser ? (
       <Container fluid>
         <Row className="user-row1 mt-3 ms-2 me-2">
-          <Col md={4} className="user-area-cols user-area-col1">
-            <h3 className="mx-auto mt-3">Hello {username}!</h3>
+          <Col md={3} className="user-area-cols user-area-col1">
+            <h4 className="mx-auto mt-3">Hello {username}!</h4>
             <div className="mx-auto mb-3">
               <img
                 className="img-user-profile mt-3"
@@ -46,11 +46,11 @@ class UserArea extends React.Component {
               />
             </div>
           </Col>
-          <Col md={4} className="user-area-cols user-area-col2">
-            <h3 className="mx-auto mt-3">Contact information</h3>
-            <h5 className="mt-3">Username: {username}</h5>
-            <h5>Email: {email}</h5>
-            <div className="edit-profile-btns">
+          <Col md={3} className="user-area-cols user-area-col2">
+            <h4 className="mx-auto mt-3">Contact information</h4>
+            <h6 className="mt-3">Username: {username}</h6>
+            <h6>Email: {email}</h6>
+            <div className="edit-profile-btns mt-2 mb-3">
               <div className="my-btn">
                 <NavLink to="#">Edit Profile</NavLink>
               </div>
@@ -61,28 +61,28 @@ class UserArea extends React.Component {
           </Col>
         </Row>
         <Row className="user-row2 ms-2 me-2">
-          <Col md={8} className="user-area-cols2 user-area-col-map">
-            <div className="user-following-posts mt-5 mb-5">
+          <Col md={6} className="user-area-col3">
+            <div className="user-create-pin-map mt-3 mb-3">
               <div>
-                <i className="fas fa-map-marked-alt navbar-brand"></i>
+                <i className="fas fa-map-marked-alt me-2"></i>
                 <NavLink to={`/user-area/${id}/map`}>Create Your Travels Pin Map!</NavLink>
               </div>
             </div>
           </Col>
         </Row>
         <Row className="user-row3 ms-2 me-2">
-          <Col md={8} className="user-area-cols2 user-area-col3">
-            <div className="user-following-posts mt-3 mb-3">
+          <Col md={6} className="user-area-col4">
+            <div className="user-following-posts mt-3 mb-2">
               <div>
-                <h5>
+                <h6>
                   <i class="fas fa-clone me-2"></i>My Posts
-                </h5>
+                </h6>
               </div>
             </div>
           </Col>
         </Row>
         <Row className="user-row4 ms-2 me-2">
-          <Col md={8} className="user-area-col-lists">
+          <Col md={6} className="user-area-col5">
             {myPosts.map((post) => {
               return (
                 <ul className="list-following-posts">
@@ -95,18 +95,18 @@ class UserArea extends React.Component {
           </Col>
         </Row>
         <Row className="user-row5 ms-2 me-2">
-          <Col md={8} className="user-area-cols2 user-area-col3">
-            <div className="user-following-posts mt-3 mb-3">
+          <Col md={6} className="user-area-col6">
+            <div className="user-following-posts mt-3 mb-2">
               <div>
-                <h5>
+                <h6>
                   <i class="fas fa-clone me-2"></i>Following
-                </h5>
+                </h6>
               </div>
             </div>
           </Col>
         </Row>
         <Row className="user-row6 ms-2 me-2 mb-3">
-          <Col md={8} className="user-area-col-lists">
+          <Col md={6} className="user-area-col7">
             {following.map((follower) => {
               return (
                 <ul className="list-following-posts">

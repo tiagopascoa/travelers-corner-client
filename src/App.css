@@ -2,6 +2,7 @@ body{
   background-color: #EBEDF0;
 }
 
+
 /* NAVBAR */
 
 .navbar-user-img{
@@ -249,14 +250,25 @@ a.text-simulation-link:hover {
   all: unset;
 }
 
+  /* .comment-navlink{
+    color: black;
+    text-decoration: none;
+  }
 
-/* User Area */
+  .comment-navlink:hover{
+    text-decoration: none;
+    color: rgb(101, 103, 107);
+  } */
+
+
+/* USER AREA & USER PROFILE */
 
 .img-user-profile{
-  width: 10rem;
+  width: 10.5rem;
   height: 10rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 50%;
+  /* border: 2px solid #6D9CD8 */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .edit-profile-btns{
@@ -269,39 +281,90 @@ a.text-simulation-link:hover {
 }
 
 .user-area-cols{
-  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* border-top-left-radius: 1.25rem; */
 }
 
-.user-area-col-lists{
+.user-area-col1{
   background-color: white;
-}
-.user-area-col1, .user-area-col2, .user-area-col3, .user-area-col-map{
-  /* border-radius: 1.25rem; */
-  /* border-top-right-radius: 1.25rem; */
-}
-
-/* .user-area-col2{
-  border-top-right-radius: 1.25rem;
   border-top-left-radius: 1.25rem;
 }
-*/
-.user-area-col3{
-/*   border-bottom-left-radius: 1.25rem;
-  border-bottom-right-radius: 1.25rem; */
-  border-top: 1px solid rgba(0,0,0,.125)
-} 
 
-.user-following-posts{
+.user-area-col2{
+  background-color: white;
+  border-top-right-radius: 1.25rem;
+}
+
+.user-area-col3{
+  background-color: white;
+  border-top: 1px solid rgba(0,0,0,.125);
+}
+
+.user-area-col4{
+  background-color: white;
+  border-top: 1px solid rgba(0,0,0,.125);
+}
+
+.user-area-col5{
+  background-color: white;
+}
+
+.user-area-col6{
+  background-color: white;
+  border-top: 1px solid rgba(0,0,0,.125);
+}
+
+.user-area-col7{
+  background-color: white;
+  border-bottom-right-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
+}
+
+.user-profile-col1{
+  background-color: white;
+  border-top-left-radius: 1.25rem;
+}
+
+.user-profile-col2{
+  background-color: white;
+  border-top-right-radius: 1.25rem;
+}
+
+.user-profile-col3{
+  border-top: 1px solid rgba(0,0,0,.125);
+  background-color: white;
+  border-bottom-right-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
+}
+
+  @media (max-width: 768px) {
+
+  .user-profile-col1{
+    border-top-right-radius: 1.25rem;
+  }
+
+  .user-profile-col2{
+    border-top-right-radius: 0;
+  }
+
+  .user-area-col1{
+    border-top-right-radius: 1.25rem;
+  }
+
+  .user-area-col2{
+    border-top-right-radius: 0;
+  }
+}
+
+.user-create-pin-map{
   display: flex;
   justify-content: space-around;
 }
 
-.user-area-cols2{
-  background-color: white;
+.user-following-posts{
+  display: flex;
+  justify-content: space-around;
 }
 
 .my-btn-delete{
@@ -328,7 +391,7 @@ a.text-simulation-link:hover {
 }
 
 
-/* TravelPostPage */
+/* TRAVELPOST PAGE */
 
 .destination-img{
   width: 100%;
@@ -389,12 +452,6 @@ a.text-simulation-link:hover {
   margin-bottom: 0;
 }
 
-
-/* User Profile */
-.user-profile-postsCol{
-  border-top: 1px solid rgba(0,0,0,.125);
-  background-color: white;
-}
 
 /* Toasts */
 .Toastify__toast--success{

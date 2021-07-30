@@ -3,6 +3,7 @@ import ReactMapGL, { Marker } from "react-map-gl";
 import Geocoder from "react-mapbox-gl-geocoder";
 import { Container, Col, Row, Button } from "react-bootstrap";
 import ReactToPrint from "react-to-print";
+import { toast } from "react-toastify";
 
 const mapStyle = {
   width: "90%",
@@ -60,6 +61,7 @@ class MapView extends PureComponent {
       markers: [...prevState.markers, tempMarker],
       tempMarker: null,
     }));
+    toast.success("New marker added!");
   };
 
   render() {
@@ -130,7 +132,7 @@ class PinMap extends React.Component {
       <Container fluid className="react-to-print">
           <MapView ref={(el) => (this.componentRef = el)} />
           <ReactToPrint
-            trigger={() => <Button>Print!</Button>}
+            trigger={() => <Button className="mb-2">Print!</Button>}
             content={() => this.componentRef}
             className="mb-2"
           />

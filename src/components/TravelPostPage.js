@@ -67,7 +67,7 @@ class TravelPostPage extends React.Component {
     return (
       <Container fluid>
 
-        <Row className="travelPost-page-row1 mt-3">
+        <Row className="travelPost-page-row1 mt-3 ms-2 me-2">
           <Col md={4} className="travelPost-page-col1">
             <div className="mx-auto mt-3 mb-4">
               <img
@@ -102,12 +102,12 @@ class TravelPostPage extends React.Component {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row className="ms-2 me-2">
           <Col md={8} className="mx-auto travelPost-page-col3">
             <Weather lat={this.state.lat} long={this.state.long} location={this.state.city} />
           </Col>
         </Row>
-        <Row className="mb-3">
+        <Row className="mb-3 ms-2 me-2">
           <Col md={8} className="mx-auto travelPost-page-col4">
             <div className="post-page-comments mt-3 mb-3">
               <h5>

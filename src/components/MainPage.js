@@ -103,8 +103,8 @@ export const MainPage = ({ user }) => {
                     </div>
                   </Card.Text>
                   <div className="like-comment-container">
-                    <div>
-                      <NavLink to={`/travel-posts/${travelPost._id}`}>
+                    <div className="main-comment-container">
+                      <NavLink to={`/travel-posts/${travelPost._id}`} className="comment-navlink">
                         <i className="far fa-comments me-1"></i>Comment
                       </NavLink>
                     </div>

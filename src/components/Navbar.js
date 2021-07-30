@@ -46,8 +46,11 @@ function MyNavbar({ loggedInUser, setLoggedInUser }) {
   ) : (
     <Navbar className="my-nav" collapseOnSelect expand="lg" variant="dark">
       <Container fluid>
+      <Navbar.Brand href="/main">
+        <img src="/images/world-map.svg" className="logo" alt="" />
+        </Navbar.Brand>
         <Navbar.Brand href="/">
-          <i className="fas fa-map-marked-alt navbar-brand"></i>TRAVELERS CORNER
+        TRAVELERS CORNER
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
