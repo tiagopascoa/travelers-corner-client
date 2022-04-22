@@ -3,8 +3,12 @@ import ReactWeather, { useOpenWeather } from 'react-open-weather';
 import '../App.css';
 
 function Weather ({lat, long, location}) {
+
+  //Make sure to include your Open Wheater API key
+  const wheaterKey = process.env.REACT_APP_WHEATER_API_KEY
+
     const { data, isLoading, errorMessage } = useOpenWeather({
-        key: '4284d5d912c0944a159548f46b5be92d',
+        key: wheaterKey,
         lat: lat,
         lon: long,
         lang: 'en',

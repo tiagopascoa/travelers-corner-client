@@ -60,10 +60,6 @@ class TravelPostPage extends React.Component {
     const { city, description, tags, user, imageUrl, createdAt, comments, country } =
       this.state;
 
-    /* const haveComments = comments.length > 0;  */
-  
-  
-  
     return (
       <Container fluid>
 

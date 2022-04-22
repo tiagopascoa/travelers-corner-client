@@ -21,13 +21,8 @@ class LikeButton extends React.Component{
        const likesLength = await newLike(this.props.travelPostId);
         this.setState({
             theLikes: likesLength.data
-        })
-/*         document.querySelector("#like-thumbs").style.color = "blue";
-        document.querySelector("#like-thumbs").style.fontWeight = 900;
-        document.querySelector("#like-text-change").innerHTML = "You like this post! "; */
-           
+        }) 
     }
-
 
     render(){
         return (

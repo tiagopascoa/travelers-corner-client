@@ -43,19 +43,19 @@ export const MainPage = ({ user }) => {
                     src="/images/add-photo.svg"
                     alt=""
                   />
-                  Photo/Video
+                  New Post
                 </div>
               </NavLink>
             </Card.Body>
           </Card>
         </Col>
       </Row>
-
+      <div className="posts-container">
       {travelPosts.map((travelPost) => {
         return (
-          <Row className="flex-row-reverse">
+          <Row className="flex-row-reverse" key={travelPost._id}>
             <Col md={5} className="mx-auto flex-col-reverse">
-              <Card key={travelPost._id} className="main-cards ">
+              <Card  className="main-cards ">
                 <Card.Header className="main-card-header">
                   <div className="main-card-user-info">
                     <img src={travelPost.user.imageUrl} alt="" />
@@ -115,6 +115,8 @@ export const MainPage = ({ user }) => {
           </Row>
         );
       })}
+      </div>
+      
     </Container>
   ) : (
     <></>

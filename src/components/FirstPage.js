@@ -1,11 +1,18 @@
-import React from "react";
+import React, {useLayoutEffect } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
-function FirstPage() {
+export const FirstPage = ({ history, loggedInUser }) => {
+
+  useLayoutEffect(() => {
+    if (loggedInUser) {
+      history.push("/main");
+    }
+  }, [loggedInUser, history]);
+
   return (
     <Container fluid>
-      <Row className="firstPage-row">
+      <Row className="firstPage-row pt-5">
         <Col md={5}>
           <img
             className="firstPage-img"
@@ -37,12 +44,6 @@ function FirstPage() {
               </div>
               <h6>Share photos and travel highlights</h6>
             </div>
-            <div className="firstPage-features-div2">
-              <div className="features-img-container">
-                <img src="/images/pin-map.svg" alt="" />
-              </div>
-              <h6>Create your own Travel Pin Map</h6>
-            </div>
             <div className="firstPage-features-div3">
               <div className="features-img-container">
                 <img src="/images/follower1.svg" alt="" />
@@ -60,6 +61,4 @@ function FirstPage() {
       </Row>
     </Container>
   );
-}
-
-export default FirstPage;
+};

@@ -9,7 +9,6 @@ function MyNavbar({ loggedInUser, setLoggedInUser }) {
     setLoggedInUser(null);
   };
 
-
   return loggedInUser ? (
     <Navbar className="my-nav" collapseOnSelect expand="lg" variant="dark">
       <Container fluid>

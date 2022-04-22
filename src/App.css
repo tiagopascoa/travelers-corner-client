@@ -129,8 +129,18 @@ body{
   border-radius: 0.5rem;
 }
 
+.photo-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
 
 /* MAIN PAGE */
+
+.posts-container{
+  display: flex;
+  flex-direction: column-reverse;
+}
 
 .background-main{
   background-color: #EBEDF0;
@@ -365,6 +375,7 @@ a.text-simulation-link:hover {
 .user-following-posts{
   display: flex;
   justify-content: space-around;
+  padding-left: 1rem;
 }
 
 .my-btn-delete{
@@ -388,6 +399,11 @@ a.text-simulation-link:hover {
 
 .list-following-posts {
   list-style: none;
+  padding-left: 1rem;
+}
+
+.user-area-list-item{
+  margin-bottom: 15px;
 }
 
 

@@ -2,8 +2,7 @@ import React, { useRef, useState } from "react";
 import { newTravelPost, uploadFile } from "../api";
 import { Container, Col, Form, Button, Row } from "react-bootstrap";
 
-export const NewTravelPost = ({ history, user }) => {
-  
+export const NewTravelPost = ({ history }) => {
   const cityRef = useRef();
   const countryRef = useRef();
   const descriptionRef = useRef();
@@ -16,7 +15,7 @@ export const NewTravelPost = ({ history, user }) => {
     const uploadData = new FormData();
     uploadData.append("image", image);
     const response = await uploadFile(uploadData);
-    
+
     const tagsArr = tagsRef.current.value.split(",");
 
     const newPost = {
@@ -79,7 +78,10 @@ export const NewTravelPost = ({ history, user }) => {
                 />
               </Form.Group>
 
-              <Form.Group controlId="formFile" className="mb-3">
+              <Form.Group
+                controlId="formFile"
+                className="mb-3 photo-input-container"
+              >
                 <Form.Label>Photo/Video</Form.Label>
                 <Form.Control
                   type="file"
@@ -98,4 +100,3 @@ export const NewTravelPost = ({ history, user }) => {
     </Container>
   );
 };
-
