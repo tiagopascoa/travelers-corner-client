@@ -12,7 +12,7 @@ export const FirstPage = ({ history, loggedInUser }) => {
 
   return (
     <Container fluid>
-      <Row className="firstPage-row pt-5">
+      <Row className="firstPage-row pt-2">
         <Col md={5}>
           <img
             className="firstPage-img"

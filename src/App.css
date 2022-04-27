@@ -27,6 +27,27 @@ body{
   width: 2rem;
 }
 
+.navbar-toggler{
+  border: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 992px) {
+  .home-logo-container {
+    display: none !important;
+  }
+  .navbar-user-img {
+    display: none !important;
+  }
+} 
+
+
 
 /* FIRST PAGE */
 
@@ -56,7 +77,7 @@ body{
 
 .my-btn{
   background-color: #6D9CD8;
-  width: 10rem;
+  width: 7.5rem;
   text-align: center;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -80,7 +101,7 @@ body{
 
 .firstPage-features-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .firstPage-features-container img {

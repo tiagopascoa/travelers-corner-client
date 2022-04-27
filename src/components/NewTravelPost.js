@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { newTravelPost, uploadFile } from "../api";
+import { toast } from "react-toastify";
 import { Container, Col, Form, Button, Row } from "react-bootstrap";
 
 export const NewTravelPost = ({ history }) => {
@@ -11,23 +12,28 @@ export const NewTravelPost = ({ history }) => {
 
   const handleSubmitForm = async (e) => {
     e.preventDefault();
+    try {
+      const uploadData = new FormData();
+      uploadData.append("image", image);
+      const response = await uploadFile(uploadData);
 
-    const uploadData = new FormData();
-    uploadData.append("image", image);
-    const response = await uploadFile(uploadData);
+      const tagsArr = tagsRef.current.value.split(",");
 
-    const tagsArr = tagsRef.current.value.split(",");
+      const newPost = {
+        city: cityRef.current.value,
+        country: countryRef.current.value,
+        description: descriptionRef.current.value,
+        tags: tagsArr,
+        imageUrl: response.data.fileUrl,
+      };
 
-    const newPost = {
-      city: cityRef.current.value,
-      country: countryRef.current.value,
-      description: descriptionRef.current.value,
-      tags: tagsArr,
-      imageUrl: response.data.fileUrl,
-    };
-
-    await newTravelPost(newPost);
-    history.push("/main");
+      await newTravelPost(newPost);
+      history.push("/main");
+    } catch (e) {
+      toast.error(
+        "Missing fields (City, Country, Description and Image are required)!"
+      );
+    }
   };
 
   return (

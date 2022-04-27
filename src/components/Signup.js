@@ -36,7 +36,7 @@ class Signup extends React.Component {
       toast.success("Sign up successful");
       this.props.history.push("/login");
     } catch (e) {
-      toast.error("Not possible to signup");
+      toast.error("Not possible to signup - All fields are required, please make sure all fields are filled!");
     }
   };
 
@@ -88,7 +88,7 @@ class Signup extends React.Component {
                   />
                 </Form.Group>
 
-                <Form.Group controlId="formFile" className="mb-3">
+                <Form.Group controlId="formFile" className="mb-3 d-flex flex-column">
                   <Form.Label>Profile picture</Form.Label>
                   <Form.Control
                     type="file"
